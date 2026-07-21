@@ -21,47 +21,45 @@
       * { box-sizing: border-box; }
       body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
       main { max-width: 980px; margin: 0 auto; padding: 40px 20px 60px; }
-      .hero, .section { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08); margin-bottom: 24px; }
-      .hero { padding: 36px 34px; }
-      .hero h1 { margin: 0 0 12px; font-size: clamp(2rem, 3vw, 3rem); line-height: 1.05; }
-      .hero p { max-width: 760px; line-height: 1.72; color: var(--muted); font-size: 1.05rem; }
-      .label { display: inline-flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
-      .label span { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #eef4ff; color: #1d4ed8; font-weight: 600; font-size: 0.95rem; }
-      .section { padding: 28px 32px; }
-      .section h2 { margin-top: 0; font-size: 1.4rem; }
-      .section p, .section li { line-height: 1.75; color: var(--muted); }
-      .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-      .card { padding: 22px 20px; border-radius: 20px; background: #f8fbff; border: 1px solid #dbe7f3; }
-      ul { padding-left: 20px; margin: 0; }
+      .page { max-width: 900px; margin: 0 auto; padding: 50px 42px; background: var(--surface); border: 1px solid var(--border); border-radius: 28px; box-shadow: 0 22px 55px rgba(15, 23, 42, 0.08); }
+      .page h1 { margin: 0 0 20px; font-size: clamp(2.6rem, 4vw, 3.6rem); line-height: 1.05; }
+      .lead { margin: 0 0 30px; font-size: 1.15rem; line-height: 1.85; color: #334155; }
+      .text-block { line-height: 1.85; color: var(--muted); font-size: 1rem; }
+      .text-block p { margin: 20px 0; }
+      .info { margin: 22px 0 34px; padding: 24px 28px; border-radius: 22px; background: #eff6ff; color: #0f172a; border: 1px solid #dbeafe; }
+      .info strong { display: inline-block; width: 104px; color: #1d4ed8; }
+      .info p { margin: 12px 0; }
+      ul { padding-left: 22px; margin: 18px 0 0; }
       li { margin-bottom: 12px; }
       .organizer-name { font-weight: 700; color: var(--text); }
-      .small { color: var(--muted); font-size: 0.95rem; }
-      .footer { text-align: center; font-size: 0.95rem; color: var(--muted); margin-top: 14px; }
+      .small a { color: var(--accent); text-decoration: none; }
+      .footer { text-align: center; font-size: 0.95rem; color: var(--muted); margin-top: 30px; }
     </style>
   </head>
   <body>
     <main>
-      <section class="hero">
+      <div class="page">
         <h1>Mathematics for Post-Quantum Cryptography (MathPQC 2026)</h1>
-        <p>MathPQC 2026 is a one-day affiliated workshop held during ASIACRYPT 2026. It brings together mathematicians and cryptographers to explore the mathematical foundations of post-quantum cryptography.</p>
-        <div class="label">
-          <span>📅 Monday, December 7, 2026</span>
-          <span>📍 Hong Kong Polytechnic University, Hong Kong</span>
-          <span>⏳ Whole-day workshop</span>
+        <p class="lead">MathPQC 2026 is a one-day affiliated workshop held during ASIACRYPT 2026. It connects mathematicians and cryptographers to explore the mathematical foundations of post-quantum cryptography.</p>
+
+        <div class="info">
+          <p><strong>Date:</strong> Monday, December 7, 2026</p>
+          <p><strong>Venue:</strong> Hong Kong Polytechnic University, Hong Kong</p>
+          <p><strong>Format:</strong> Whole-day workshop with invited talks and contributed talks</p>
         </div>
-      </section>
 
-      <section class="section">
-        <h2>Event summary</h2>
-        <p>Post-quantum schemes rely on several families of computationally hard problems, including lattice problems (e.g. the shortest vector problem on Euclidean and ideal lattices, and the lattice isomorphism problem on Euclidean and module lattices), finding isogenies between supersingular elliptic curves (and superspecial abelian varieties) over finite fields, decoding problems for linear codes, and solving systems of multivariate quadratic (MQ) equations over finite fields. These problems draw on a broad range of mathematical disciplines, including number theory, algebra, the geometry of numbers, algebraic geometry, and many others. In light of these connections, this affiliated event aims to bring together mathematicians working in these fields and cryptographers interested in the mathematical foundations of post-quantum cryptography. The event will provide an opportunity to exchange ideas across disciplines, highlight recent developments, and foster new interactions between the mathematics and cryptography communities.</p>
-      </section>
+        <div class="text-block">
+          <p>Post-quantum schemes rely on several families of hard mathematical problems. This event focuses on the mathematical foundations of these schemes, including lattice problems, isogenies between supersingular elliptic curves, decoding problems for linear codes, and multivariate quadratic equations over finite fields.</p>
+          <p>MathPQC 2026 brings together experts in mathematics and cryptography to exchange ideas across disciplines, showcase recent developments, and build new collaborations.</p>
 
-      <section class="section">
-        <h2>Organizers</h2>
-        <ul>
-          <li><span class="organizer-name">Shi Bai</span>, Shanghai Jiao Tong University <span class="small">(baishi@sjtu.edu.cn)</span></li><li><span class="organizer-name">Mingjie Chen</span>, COSIC, KU Leuven <span class="small">(mjchennn555@gmail.com)</span></li><li><span class="organizer-name">Steven Galbraith</span>, University of Auckland <span class="small">(S.Galbraith@auckland.ac.nz)</span></li>
-        </ul>
-      </section>
+          <p><strong>Organizers:</strong></p>
+          <ul>
+            <li><strong>Shi Bai</strong> — Shanghai Jiao Tong University (<a href="mailto:baishi@sjtu.edu.cn">baishi@sjtu.edu.cn</a>)</li>
+            <li><strong>Mingjie Chen</strong> — COSIC, KU Leuven (<a href="mailto:mjchennn555@gmail.com">mjchennn555@gmail.com</a>)</li>
+            <li><strong>Steven Galbraith</strong> — University of Auckland (<a href="mailto:S.Galbraith@auckland.ac.nz">S.Galbraith@auckland.ac.nz</a>)</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="footer">Generated from the proposal PDF in the repository.</div>
     </main>
