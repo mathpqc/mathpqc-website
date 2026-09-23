@@ -11,38 +11,71 @@
     <style>
       :root {
         color-scheme: light;
-        --bg: #f7fbff;
+        --bg: #edf2fc;
         --surface: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --accent: #2563eb;
-        --border: #e2e8f0;
+        --text: #192544;
+        --muted: #4c5a73;
+        --accent: #464ac6;
+        --border: #dee5f4;
       }
       * { box-sizing: border-box; }
-      body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
-      main { max-width: 980px; margin: 0 auto; padding: 24px 16px 40px; }
-      .page { max-width: 900px; margin: 0 auto; padding: 34px 36px; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 16px 45px rgba(15, 23, 42, 0.08); }
-      .page h1 { margin: 0 0 10px; font-size: clamp(2.3rem, 3.5vw, 3.2rem); line-height: 1.05; }
-      .page .subtitle { display: block; margin-top: 8px; font-size: clamp(1rem, 1.8vw, 1.2rem); line-height: 1.3; color: #334155; font-weight: 600; }
-      .lead { margin: 0 0 20px; font-size: 1.04rem; line-height: 1.7; color: #334155; }
-      .text-block { line-height: 1.75; color: var(--muted); font-size: 0.98rem; }
-      .text-block h2 { margin: 22px 0 8px; font-size: 1.15rem; color: var(--text); }
-      .text-block p { margin: 10px 0; }
-      .info { margin: 18px 0 24px; padding: 18px 22px; border-radius: 18px; background: #eff6ff; color: #0f172a; border: 1px solid #dbeafe; }
-      .info strong { display: inline-block; width: 104px; color: #1d4ed8; }
-      .info p { margin: 8px 0; }
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: radial-gradient(ellipse at 0% 0%, #d7e5ff 0, transparent 48%),
+          radial-gradient(ellipse at 100% 35%, #e7ddfa 0, transparent 45%),
+          linear-gradient(150deg, #eef3ff, #eaf7f5);
+        color: var(--text);
+        min-height: 100vh;
+      }
+      main { max-width: 1040px; margin: 0 auto; padding: 48px 24px 64px; }
+      .page { overflow: hidden; background: var(--surface); border: 1px solid #ffffff; border-radius: 28px; box-shadow: 0 24px 80px #263e7714; }
+      .hero { position: relative; padding: 44px 48px 36px; background: linear-gradient(120deg, #eef2ff 0%, #f0edfc 60%, #e7f5f4 100%); border-top: 5px solid #6464d9; }
+      .eyebrow { margin: 0 0 20px; color: #5557a1; font-size: .75rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+      .page h1 { margin: 0 0 18px; font-size: clamp(2.5rem, 6vw, 4.2rem); line-height: 1.08; letter-spacing: -.045em; color: #303780; }
+      .page .subtitle { display: block; margin-top: 16px; font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.5; letter-spacing: 0; color: #4d5475; font-weight: 500; }
+      .lead { margin: 0; font-size: 1.02rem; line-height: 1.7; color: #4c5875; }
+      .info { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; margin: 0; padding: 24px 48px; background: #f7f9ff; border-bottom: 1px solid var(--border); }
+      .info strong { display: block; margin-bottom: 6px; color: #5557a1; font-size: .73rem; letter-spacing: .12em; text-transform: uppercase; }
+      .info p { margin: 0; font-size: .95rem; line-height: 1.6; }
+      .text-block { padding: 12px 48px 44px; line-height: 1.8; color: var(--muted); font-size: .98rem; }
+      .text-block h2 { display: flex; align-items: center; gap: 12px; margin: 34px 0 14px; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); }
+      .text-block h2::before { content: ''; flex: 0 0 4px; height: 22px; border-radius: 4px; background: linear-gradient(#7371df, #3fa79e); }
+      .text-block p { margin: 12px 0; }
+      a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 4px; overflow-wrap: anywhere; }
+      a:hover { color: #24287f; }
+      a:focus-visible { outline: 3px solid #6464d9; outline-offset: 5px; border-radius: 3px; }
       ul { padding-left: 22px; margin: 10px 0 0; }
       li { margin-bottom: 8px; }
-      .organizer-name { font-weight: 700; color: var(--text); }
-      .small a { color: var(--accent); text-decoration: none; }
-      .footer { text-align: center; font-size: 0.95rem; color: var(--muted); margin-top: 30px; }
+      li::marker { color: #7371c8; }
+      .speaker-card { display: flex; align-items: center; gap: 20px; padding: 26px 28px; border: 1px solid #d9d7f2; border-radius: 18px; background: linear-gradient(115deg, #eeedfc, #f0f8fc); }
+      .speaker-monogram { display: grid; place-items: center; flex: 0 0 60px; height: 60px; border-radius: 16px; background: #deddf6; color: #4b469d; font-size: 1.25rem; font-weight: 750; letter-spacing: .04em; }
+      .speaker-name { display: inline-block; font-size: clamp(1.4rem, 3vw, 1.85rem); font-weight: 750; letter-spacing: -.03em; line-height: 1.3; }
+      .speaker-name span { display: inline-block; margin-left: 8px; font-size: 1.1rem; }
+      .speaker-card p { margin: 6px 0 0; font-size: .93rem; }
+      .text-block .speaker-note { margin-top: 12px; font-size: .88rem; color: #667089; }
+      .submission-link { display: inline-block; padding: 10px 18px; margin-top: 8px; background: #4b4fc3; color: #fff; border-radius: 10px; font-weight: 650; text-decoration: none; }
+      .submission-link:hover { background: #383c9f; color: #fff; }
+      @media (max-width: 600px) {
+        main { padding: 18px 12px 32px; }
+        .page { border-radius: 20px; }
+        .hero { padding: 30px 24px; }
+        .info { grid-template-columns: 1fr; gap: 16px; padding: 22px 24px; }
+        .text-block { padding: 4px 24px 30px; }
+        .speaker-card { padding: 20px 16px; gap: 14px; }
+        .speaker-monogram { flex-basis: 46px; height: 46px; border-radius: 12px; font-size: 1rem; }
+      }
     </style>
   </head>
   <body>
     <main>
       <div class="page">
+        <header class="hero">
+        <p class="eyebrow">ASIACRYPT 2026 · Affiliated workshop</p>
         <h1>MathPQC 2026<span class="subtitle">(Mathematics for Post-Quantum Cryptography)</span></h1>
         <p class="lead">MathPQC 2026 is a one-day affiliated workshop of ASIACRYPT 2026.</p>
+
+        </header>
 
         <div class="info">
           <p><strong>Date:</strong> Monday, December 7, 2026</p>
@@ -69,11 +102,17 @@
           <p>Depending on the number of submissions received, we may also organize a poster session. We therefore ask applicants to indicate in their submission whether they would be willing to present a poster if their proposal cannot be accommodated as a contributed talk.</p>
           <p>The deadline for contributed talk submissions is <strong>November 1, AoE (Anywhere on Earth)</strong>. The notification date is <strong>November 6</strong>.</p>
           <p>If you are interested in presenting a contributed talk, please fill out the submission form below, or send an email to one of the three organizers with details of your talk.</p>
-          <p>Submission form (note that this is not a registration form): <a href="https://forms.gle/PfNt6nnWAom5QzxeA" target="_blank" rel="noopener noreferrer">https://forms.gle/PfNt6nnWAom5QzxeA</a></p>
+          <p>Submission form (note that this is not a registration form): <br><a class="submission-link" href="https://forms.gle/PfNt6nnWAom5QzxeA" target="_blank" rel="noopener noreferrer">Submit a talk <span aria-hidden="true">↗</span></a></p>
          
           <h2>Invited speakers</h2>
-          <p>John Voight, University of Sydney</p>
-          <p>more speakers TBA...</p>
+          <div class="speaker-card">
+            <div class="speaker-monogram" aria-hidden="true">JV</div>
+            <div>
+              <a class="speaker-name" href="https://profiles.sydney.edu.au/john.voight" target="_blank" rel="noopener noreferrer">John Voight<span aria-hidden="true">↗</span></a>
+              <p>University of Sydney</p>
+            </div>
+          </div>
+          <p class="speaker-note">More speakers to be announced.</p>
 
           <h2>Schedule</h2>
           <p>TBA</p>
