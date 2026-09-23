@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" fill="none">
+  <!-- Sparse, oversized curves: a quiet mathematical texture, without axes or labels. -->
+  <g stroke-width="1.4" stroke-linecap="round">
+    <path stroke="#7870bb" opacity=".19" d="M -160 100 C 230 -90 540 70 400 340 S -140 670 120 990 S 570 1120 680 1340"/>
+    <path stroke="#428eaa" opacity=".17" d="M -180 760 C 40 380 320 430 530 630 S 1040 1080 1430 820 S 1720 460 1800 350"/>
+    <path stroke="#7870bb" opacity=".17" d="M 1180 -160 C 790 140 980 430 1300 400 S 1720 100 1510 80 S 1150 510 1370 820 S 1720 1180 1520 1380"/>
+    <path stroke="#428eaa" opacity=".16" d="M 180 -120 C 520 140 1060 40 1160 300 S 780 720 1040 1030 S 1510 1250 1740 1090"/>
+    <path stroke="#8f7ebc" opacity=".14" d="M -140 1160 C 190 1260 330 980 240 750 S 40 520 90 750 S 630 1120 850 880 S 1240 490 1750 610"/>
+  </g>
+</svg>
