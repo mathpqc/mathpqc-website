@@ -62,6 +62,7 @@
       li { margin-bottom: 8px; }
       li::marker { color: #7371c8; }
       .speaker-card { display: flex; align-items: center; gap: 20px; padding: 26px 28px; border: 1px solid #d9d7f2; border-radius: 18px; background: linear-gradient(115deg, #eeedfc, #f0f8fc); }
+      .speaker-card + .speaker-card { margin-top: 14px; }
       .speaker-monogram { display: grid; place-items: center; flex: 0 0 60px; height: 60px; border-radius: 16px; background: #deddf6; color: #4b469d; font-size: 1.25rem; font-weight: 750; letter-spacing: .04em; }
       .speaker-name { display: inline-block; font-size: clamp(1.4rem, 3vw, 1.85rem); font-weight: 750; letter-spacing: -.03em; line-height: 1.3; }
       .speaker-name span { display: inline-block; margin-left: 8px; font-size: 1.1rem; }
@@ -69,6 +70,13 @@
       .text-block .speaker-note { margin-top: 12px; font-size: .88rem; color: #667089; }
       .submission-link { display: inline-block; padding: 10px 18px; margin-top: 8px; background: #4b4fc3; color: #fff; border-radius: 10px; font-weight: 650; text-decoration: none; }
       .submission-link:hover { background: #383c9f; color: #fff; }
+      .fee-table-wrapper { overflow-x: auto; margin: 20px 0; }
+      .fee-table { width: 100%; border-collapse: collapse; font-size: .9rem; text-align: left; }
+      .fee-table caption { text-align: left; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+      .fee-table th, .fee-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+      .fee-table thead { background: #eeedfc; color: #303780; }
+      .fee-table tbody th { font-weight: 500; }
+      .fee-table td { white-space: nowrap; font-weight: 650; color: var(--text); }
       @media (max-width: 600px) {
         main { padding: 18px 12px 32px; }
         .page { border-radius: 20px; }
@@ -102,7 +110,24 @@
           <p>Post-quantum schemes rely on several families of computationally hard problems, including lattice problems (e.g. the shortest vector problem on Euclidean and ideal lattices, and the lattice isomorphism problem on Euclidean and module lattices), finding isogenies between supersingular elliptic curves (and superspecial abelian varieties) over finite fields, decoding problems for linear codes, and solving systems of multivariate quadratic (MQ) equations over finite fields. These problems draw on a broad range of mathematical disciplines, including number theory, algebra, the geometry of numbers, algebraic geometry, and many others. In light of these connections, this affiliated event aims to bring together mathematicians working in these fields and cryptographers interested in the mathematical foundations of post-quantum cryptography. The event will provide an opportunity to exchange ideas across disciplines, highlight recent developments, and foster new interactions between the mathematics and cryptography communities.</p>
 
           <h2>Registration</h2>
-          <p>Registration is required to attend this event. Registration is handled through the ASIACRYPT 2026 registration page and will open once registration for ASIACRYPT 2026 becomes available. Participants may register for this event only, without registering for or attending the main ASIACRYPT 2026 conference. </p>
+          <p>Registration is now open through ASIACRYPT 2026. To attend MathPQC, please register for the affiliated events. You may attend the affiliated events only, without registering for the main conference.</p>
+          <p><a class="submission-link" href="https://register.iacr.org/conferences/asiacrypt2026" target="_blank" rel="noopener noreferrer">Register via ASIACRYPT 2026 <span aria-hidden="true">↗</span></a></p>
+          <div class="fee-table-wrapper">
+            <table class="fee-table">
+              <caption>Affiliated-event registration fees (USD)</caption>
+              <thead>
+                <tr><th scope="col">Attendance</th><th scope="col">Before Nov 7, 2026</th><th scope="col">From Nov 7, 2026</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Affiliated events only — regular or student</th><td>$120</td><td>$180</td></tr>
+                <tr><th scope="row">Also attending ASIACRYPT — regular</th><td>$120</td><td>$180</td></tr>
+                <tr><th scope="row">Also attending ASIACRYPT — student</th><td>$60</td><td>$120</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>For ASIACRYPT attendees, the fees above are in addition to the main conference registration fee. The early registration deadline is <strong>November 6, 2026</strong>.</p>
+          <p>The affiliated-events-only fee covers all affiliated-event technical programs, tea breaks and lunch on <strong>Monday, December 7</strong>, plus the ASIACRYPT welcome reception that evening at a separate venue. It does not include the main conference, accommodation, or IACR membership.</p>
+          <p>IACR financial support for student presenters does not cover presenters at affiliated events. For full registration details and policies, please see the <a href="https://asiacrypt.iacr.org/2026/registration.php" target="_blank" rel="noopener noreferrer">official ASIACRYPT 2026 registration page</a>. The talk submission form below is separate from event registration.</p>
 
           <h2>Call for contributed talks</h2>
           <p>We welcome contributed talks on the topic of mathematics for post-quantum cryptography. Interested participants should submit the following information:</p>
@@ -125,6 +150,18 @@
             <div>
               <a class="speaker-name" href="https://profiles.sydney.edu.au/john.voight" target="_blank" rel="noopener noreferrer">John Voight<span aria-hidden="true">↗</span></a>
               <p>University of Sydney</p>
+            </div>
+          </div>
+          <div class="speaker-card">
+            <div class="speaker-monogram" aria-hidden="true">HO</div>
+            <div>
+              <span class="speaker-name">Hiroshi Onuki</span>
+            </div>
+          </div>
+          <div class="speaker-card">
+            <div class="speaker-monogram" aria-hidden="true">EK</div>
+            <div>
+              <span class="speaker-name">Elena Kirshanova</span>
             </div>
           </div>
           <p class="speaker-note">More speakers to be announced.</p>
