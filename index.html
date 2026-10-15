@@ -77,10 +77,22 @@
       .fee-table thead { background: #eeedfc; color: #303780; }
       .fee-table tbody th { font-weight: 500; }
       .fee-table td { white-space: nowrap; font-weight: 650; color: var(--text); }
+      html { scroll-behavior: smooth; }
+      .text-block h2[id] { scroll-margin-top: 24px; }
+      .page-nav { padding: 20px 48px; background: #f7f7ff; border-bottom: 1px solid var(--border); }
+      .page-nav-label { margin: 0 0 10px; color: #5557a1; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+      .page-nav ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+      .page-nav li { margin: 0; }
+      .page-nav a { display: block; padding: 9px 13px; border: 1px solid #dddff1; border-radius: 10px; background: #fff; color: #45488d; font-size: .88rem; font-weight: 600; line-height: 1.5; text-decoration: none; }
+      .page-nav a:hover { background: #eae9fc; border-color: #aaa8dc; color: #303780; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+      }
       @media (max-width: 600px) {
         main { padding: 18px 12px 32px; }
         .page { border-radius: 20px; }
         .hero { padding: 30px 24px; }
+        .page-nav { padding: 18px 24px; }
         .info { grid-template-columns: 1fr; gap: 16px; padding: 22px 24px; }
         .text-block { padding: 4px 24px 30px; }
         .speaker-card { padding: 20px 16px; gap: 14px; }
@@ -100,16 +112,29 @@
         </div>
         </header>
 
+        <nav class="page-nav" aria-label="Page sections">
+          <p class="page-nav-label">On this page</p>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#contributed-talks">Contributed talks</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#organizers">Organizers</a></li>
+          </ul>
+        </nav>
+
+
         <div class="info">
           <p><strong>Date:</strong> Monday, December 7, 2026</p>
           <p><strong>Venue:</strong> Hong Kong Polytechnic University, Hong Kong</p>
         </div>
 
         <div class="text-block">
-          <h2>Event summary</h2>
+          <h2 id="overview" tabindex="-1">Event summary</h2>
           <p>Post-quantum schemes rely on several families of computationally hard problems, including lattice problems (e.g. the shortest vector problem on Euclidean and ideal lattices, and the lattice isomorphism problem on Euclidean and module lattices), finding isogenies between supersingular elliptic curves (and superspecial abelian varieties) over finite fields, decoding problems for linear codes, and solving systems of multivariate quadratic (MQ) equations over finite fields. These problems draw on a broad range of mathematical disciplines, including number theory, algebra, the geometry of numbers, algebraic geometry, and many others. In light of these connections, this affiliated event aims to bring together mathematicians working in these fields and cryptographers interested in the mathematical foundations of post-quantum cryptography. The event will provide an opportunity to exchange ideas across disciplines, highlight recent developments, and foster new interactions between the mathematics and cryptography communities.</p>
 
-          <h2>Registration</h2>
+          <h2 id="registration" tabindex="-1">Registration</h2>
           <p>Registration is now open through ASIACRYPT 2026. To attend MathPQC, please register for the affiliated events. You may attend the affiliated events only, without registering for the main conference.</p>
           <p><a class="submission-link" href="https://register.iacr.org/conferences/asiacrypt2026" target="_blank" rel="noopener noreferrer">Register via ASIACRYPT 2026 <span aria-hidden="true">↗</span></a></p>
           <div class="fee-table-wrapper">
@@ -129,7 +154,7 @@
           <p>The affiliated-events-only fee covers all affiliated-event technical programs, tea breaks and lunch on <strong>Monday, December 7</strong>, plus the ASIACRYPT welcome reception that evening at a separate venue. It does not include the main conference, accommodation, or IACR membership.</p>
           <p>IACR financial support for student presenters does not cover presenters at affiliated events. For full registration details and policies, please see the <a href="https://asiacrypt.iacr.org/2026/registration.php" target="_blank" rel="noopener noreferrer">official ASIACRYPT 2026 registration page</a>. The talk submission form below is separate from event registration.</p>
 
-          <h2>Call for contributed talks</h2>
+          <h2 id="contributed-talks" tabindex="-1">Call for contributed talks</h2>
           <p>We welcome contributed talks on the topic of mathematics for post-quantum cryptography. Interested participants should submit the following information:</p>
           <ul>
             <li>Name</li>
@@ -144,12 +169,11 @@
           <p>If you are interested in presenting a contributed talk, please fill out the submission form below, or send an email to one of the three organizers with details of your talk.</p>
           <p>Submission form (note that this is not a registration form): <br><a class="submission-link" href="https://forms.gle/PfNt6nnWAom5QzxeA" target="_blank" rel="noopener noreferrer">Submit a talk <span aria-hidden="true">↗</span></a></p>
          
-          <h2>Invited speakers</h2>
+          <h2 id="speakers" tabindex="-1">Invited speakers</h2>
           <div class="speaker-card">
-            <div class="speaker-monogram" aria-hidden="true">JV</div>
+            <div class="speaker-monogram" aria-hidden="true">EK</div>
             <div>
-              <a class="speaker-name" href="https://profiles.sydney.edu.au/john.voight" target="_blank" rel="noopener noreferrer">John Voight<span aria-hidden="true">↗</span></a>
-              <p>University of Sydney</p>
+              <a class="speaker-name" href="https://elenakirshanova.github.io/" target="_blank" rel="noopener noreferrer">Elena Kirshanova<span aria-hidden="true">↗</span></a>
             </div>
           </div>
           <div class="speaker-card">
@@ -159,17 +183,18 @@
             </div>
           </div>
           <div class="speaker-card">
-            <div class="speaker-monogram" aria-hidden="true">EK</div>
+            <div class="speaker-monogram" aria-hidden="true">JV</div>
             <div>
-              <a class="speaker-name" href="https://elenakirshanova.github.io/" target="_blank" rel="noopener noreferrer">Elena Kirshanova<span aria-hidden="true">↗</span></a>
+              <a class="speaker-name" href="https://profiles.sydney.edu.au/john.voight" target="_blank" rel="noopener noreferrer">John Voight<span aria-hidden="true">↗</span></a>
+              <p>University of Sydney</p>
             </div>
           </div>
           <p class="speaker-note">More speakers to be announced.</p>
 
-          <h2>Schedule</h2>
+          <h2 id="schedule" tabindex="-1">Schedule</h2>
           <p>TBA</p>
 
-          <p><strong>Organizers:</strong></p>
+          <h2 id="organizers" tabindex="-1">Organizers</h2>
           <ul>
             <li><strong>Shi Bai</strong> — Shanghai Jiao Tong University (<a href="mailto:baishi@sjtu.edu.cn">baishi@sjtu.edu.cn</a>)</li>
             <li><strong>Mingjie Chen</strong> — COSIC, KU Leuven (<a href="mailto:mjchennn555@gmail.com">mjchennn555@gmail.com</a>)</li>
