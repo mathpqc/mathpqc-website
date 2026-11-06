@@ -48,9 +48,16 @@
       .page h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; margin: 0 0 18px; font-size: clamp(2.5rem, 6vw, 4.2rem); line-height: 1.08; letter-spacing: -.035em; color: #303780; }
       .page .subtitle { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: block; margin-top: 16px; font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.5; letter-spacing: 0; color: #4d5475; font-weight: 500; }
       .lead { margin: 0; font-size: 1.02rem; line-height: 1.7; color: #4c5875; }
-      .info { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; margin: 0; padding: 24px 48px; background: #f7f9ff; border-bottom: 1px solid var(--border); }
-      .info strong { display: block; margin-bottom: 6px; color: #5557a1; font-size: .73rem; letter-spacing: .12em; text-transform: uppercase; }
-      .info p { margin: 0; font-size: .95rem; line-height: 1.6; }
+      .info { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 32px; margin: 0; padding: 30px 48px; background: #f7f9ff; border-bottom: 1px solid var(--border); }
+      .info-item { min-width: 0; }
+      .info-location { padding-left: 32px; border-left: 1px solid #dce1ef; }
+      .info p { margin: 0; }
+      .info .info-label { margin-bottom: 12px; color: #5557a1; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+      .info .info-primary { font-size: 1.05rem; line-height: 1.45; font-weight: 650; color: var(--text); }
+      .info .info-secondary { margin-top: 6px; color: #606b80; font-size: .88rem; line-height: 1.6; }
+      .info .room-tag { display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; padding: 6px 12px; border: 1px solid #d9deed; border-radius: 6px; background: #fff; line-height: 1.5; }
+      .room-label { color: #68728a; font-size: .68rem; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
+      .room-number { font-family: 'SFMono-Regular', Consolas, monospace; font-size: .9rem; font-weight: 700; color: #303780; }
       .text-block { padding: 12px 48px 44px; line-height: 1.8; color: var(--muted); font-size: .98rem; }
       .text-block h2 { display: flex; align-items: center; gap: 12px; margin: 34px 0 14px; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); }
       .text-block h2::before { content: ''; flex: 0 0 4px; height: 22px; border-radius: 4px; background: linear-gradient(#7371df, #3fa79e); }
@@ -88,8 +95,9 @@
       .schedule-table thead th { padding-top: 16px; padding-bottom: 16px; font-size: .72rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; border-bottom: 0; }
       .schedule-table td:first-child { width: 34%; white-space: nowrap; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: .86rem; font-variant-numeric: tabular-nums; border-right: 1px solid #e2e2e2; }
       .schedule-table .session-heading th { padding: 11px 20px; background: #ececec; color: #222; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: .75rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; border-top: 2px solid #202020; border-bottom: 1px solid #bcbcbc; }
-      .schedule-table .schedule-break { background: #f6f6f6; color: #555; }
-      .schedule-table .schedule-break td { border-top: 1px dashed #999; }
+      .schedule-table tbody td { background: #ffffff; }
+      .schedule-table .schedule-break { background: #f3eee5; color: #555; }
+      .schedule-table .schedule-break td { background: #f3eee5; border-top: 2px solid #202020; border-bottom: 2px solid #202020; }
       .schedule-table tbody:last-child tr:last-child td { border-bottom: 0; }
       @media (max-width: 600px) {
         .schedule-table th, .schedule-table td { padding: 12px 10px; }
@@ -113,7 +121,8 @@
         .page { border-radius: 20px; }
         .hero { padding: 30px 24px; }
         .page-nav { padding: 18px 24px; }
-        .info { grid-template-columns: 1fr; gap: 16px; padding: 22px 24px; }
+        .info { grid-template-columns: 1fr; gap: 22px; padding: 24px; }
+        .info-location { padding-left: 0; padding-top: 22px; border-left: 0; border-top: 1px solid #dce1ef; }
         .text-block { padding: 4px 24px 30px; }
         .speaker-card { padding: 20px 16px; gap: 14px; }
         .speaker-monogram { flex-basis: 46px; height: 46px; border-radius: 12px; font-size: 1rem; }
@@ -146,10 +155,16 @@
 
 
         <div class="info">
-          <p><strong>Date:</strong> Monday, December 7, 2026</p>
-          <div>
-            <p><strong>Location:</strong> Hong Kong Polytechnic University, Hong Kong<br>PolyU Main Campus</p>
-            <p><strong>Room:</strong> DE302</p>
+          <div class="info-item">
+            <p class="info-label">Date</p>
+            <p class="info-primary"><time datetime="2026-12-07">December 7, 2026</time></p>
+            <p class="info-secondary">Monday</p>
+          </div>
+          <div class="info-item info-location">
+            <p class="info-label">Location</p>
+            <p class="info-primary">Hong Kong Polytechnic University</p>
+            <p class="info-secondary">PolyU Main Campus · Hong Kong</p>
+            <p class="room-tag"><span class="room-label">Room</span><span class="room-number">DE302</span></p>
           </div>
         </div>
 
@@ -199,7 +214,7 @@
                 <tr><td>09:55–10:15</td><td>Talk 1</td></tr>
                 <tr><td>10:15–10:35</td><td>Talk 2</td></tr>
               </tbody>
-              <tbody><tr class="schedule-break"><td>10:35–11:00</td><td>Coffee Break (AM)</td></tr></tbody>
+              <tbody><tr class="schedule-break"><td>10:35–11:00</td><td>Coffee Break</td></tr></tbody>
               <tbody>
                 <tr class="session-heading"><th colspan="2" scope="rowgroup">Session 2 · 11:00–12:30</th></tr>
                 <tr><td>11:00–11:50</td><td>Invited talk 2</td></tr>
@@ -213,7 +228,7 @@
                 <tr><td>14:50–15:10</td><td>Talk 5</td></tr>
                 <tr><td>15:10–15:30</td><td>Talk 6</td></tr>
               </tbody>
-              <tbody><tr class="schedule-break"><td>15:30–16:00</td><td>Coffee Break (PM)</td></tr></tbody>
+              <tbody><tr class="schedule-break"><td>15:30–16:00</td><td>Coffee Break</td></tr></tbody>
               <tbody>
                 <tr class="session-heading"><th colspan="2" scope="rowgroup">Session 4 · 16:00–17:30</th></tr>
                 <tr><td>16:00–16:50</td><td>Invited talk 4</td></tr>
