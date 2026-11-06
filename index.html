@@ -78,15 +78,23 @@
       .fee-table thead { background: #eeedfc; color: #303780; }
       .fee-table tbody th { font-weight: 500; }
       .fee-table td { white-space: nowrap; font-weight: 650; color: var(--text); }
-      .schedule-table { width: 100%; border-collapse: collapse; font-size: .94rem; text-align: left; }
-      .schedule-table caption { text-align: left; color: var(--muted); margin-bottom: 12px; }
-      .schedule-table th, .schedule-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
-      .schedule-table thead { background: #eeedfc; color: #303780; }
-      .schedule-table td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
-      .schedule-table .session-heading th { background: #f3f4fc; color: #45488d; font-weight: 650; }
-      .schedule-table .schedule-break { background: #eef8f5; color: #32645d; }
+      .text-block #schedule { color: #151515; }
+      .text-block #schedule::before { background: #151515; border-radius: 0; }
+      .schedule-meta { color: #555; font-size: .88rem; }
+      .schedule-wrapper { overflow-x: auto; margin: 22px 0 32px; border: 1px solid #202020; }
+      .schedule-table { width: 100%; border-collapse: collapse; background: #fff; color: #202020; font-size: .94rem; line-height: 1.5; text-align: left; }
+      .schedule-table th, .schedule-table td { padding: 14px 20px; border-bottom: 1px solid #d5d5d5; }
+      .schedule-table thead { background: #191919; color: #fff; }
+      .schedule-table thead th { padding-top: 16px; padding-bottom: 16px; font-size: .72rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; border-bottom: 0; }
+      .schedule-table td:first-child { width: 34%; white-space: nowrap; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: .86rem; font-variant-numeric: tabular-nums; border-right: 1px solid #e2e2e2; }
+      .schedule-table .session-heading th { padding: 11px 20px; background: #ececec; color: #222; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: .75rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; border-top: 2px solid #202020; border-bottom: 1px solid #bcbcbc; }
+      .schedule-table .schedule-break { background: #f6f6f6; color: #555; }
+      .schedule-table .schedule-break td { border-top: 1px dashed #999; }
+      .schedule-table tbody:last-child tr:last-child td { border-bottom: 0; }
       @media (max-width: 600px) {
-        .schedule-table th, .schedule-table td { padding: 10px 8px; }
+        .schedule-table th, .schedule-table td { padding: 12px 10px; }
+        .schedule-table .session-heading th { padding: 10px; }
+        .schedule-table td:first-child { font-size: .76rem; width: 42%; }
         .schedule-table { font-size: .85rem; }
       }
       html { scroll-behavior: smooth; }
@@ -180,10 +188,9 @@
           </div>
 
           <h2 id="schedule" tabindex="-1">Schedule</h2>
-          <p><strong>Tentative schedule</strong> · Monday, December 7, 2026. All times are Hong Kong time (UTC+8).</p>
-          <div class="fee-table-wrapper">
-            <table class="schedule-table">
-              <caption>Each session includes a 50-minute invited talk and two 20-minute contributed talks. Session 1 also includes five minutes of opening remarks.</caption>
+          <p class="schedule-meta"><strong>Tentative schedule</strong> · Monday, December 7, 2026. All times are Hong Kong time (UTC+8).</p>
+          <div class="schedule-wrapper">
+            <table class="schedule-table" aria-labelledby="schedule">
               <thead><tr><th scope="col">Time</th><th scope="col">Program</th></tr></thead>
               <tbody>
                 <tr class="session-heading"><th colspan="2" scope="rowgroup">Session 1 · 09:00–10:35</th></tr>
